@@ -91,7 +91,7 @@ Value Score = DIVIDE(AVERAGE([Max_Power_bhp]), AVERAGE([Price_USD])) * 1000
 ### Key Findings
 
 #### **Finding 1: Premium Brand Hierarchy**
-![Overview Dashboard](screenshots/power_bi_overview.png)
+
 
 **Top 3 Most Expensive Brands:**
 1. Mercedes - $68,450 average
@@ -105,7 +105,7 @@ Value Score = DIVIDE(AVERAGE([Max_Power_bhp]), AVERAGE([Price_USD])) * 1000
 ---
 
 #### **Finding 2: Fuel Type Premium**
-![Fuel Analysis](screenshots/power_bi_fuel_analysis.png)
+
 
 **Price by Fuel Type:**
 - Hybrid: $62,340 (highest)
@@ -205,144 +205,5 @@ Value Score = DIVIDE(AVERAGE([Max_Power_bhp]), AVERAGE([Price_USD])) * 1000
 
 ---
 
-## Section 8: Ethical Considerations
 
-### Data Privacy & Bias:
-1. **Anonymization**
-   - ✅ Dataset contains no personal information (VIN, owner names)
-   - ✅ Car_ID is synthetic identifier
 
-2. **Sampling Bias**
-   - ⚠️ **Concern:** Dataset may over-represent certain brands
-   - **Impact:** Could mislead consumers about true market distribution
-   - **Mitigation:** Clearly label as "sample data," not market census
-
-3. **Price Fairness**
-   - ⚠️ **Concern:** Automated pricing algorithms could discriminate
-   - **Impact:** If dealers use this for pricing, could perpetuate regional/demographic biases
-   - **Mitigation:** Recommend human oversight, transparency in pricing factors
-
-### Responsible Use of Insights:
-1. **Decision Automation**
-   - ❌ **Don't:** Use solely for automated loan approvals
-   - ✅ **Do:** Use as one input among many for human decision-makers
-
-2. **Consumer Impact**
-   - **Positive:** Helps buyers make informed decisions
-   - **Risk:** Could pressure buyers into "value" choices against preferences
-
-3. **Market Manipulation**
-   - **Risk:** If widely adopted, could create self-fulfilling price predictions
-   - **Mitigation:** Regular model updates, market validation
-
-### AI & Automation Ethics:
-1. **Transparency**
-   - All calculations and logic documented in DAX measures
-   - Dashboard clearly shows data sources and timeframes
-
-2. **Accountability**
-   - Business decisions should not be "AI's fault"
-   - Human judgment required for final actions
-
-3. **Continuous Monitoring**
-   - Model should be refreshed quarterly with new data
-   - Track prediction accuracy vs. actual market prices
-
-### Data Quality Ethics:
-1. **Accuracy Responsibility**
-   - Verified no missing values
-   - Documented limitations (no condition/location data)
-
-2. **Misleading Visualizations**
-   - Used consistent scales across charts
-   - Avoided truncated Y-axes that exaggerate differences
-
----
-
-## Project Files
-```
-custom-bi-project/
-│
-├── car_price_dashboard.pbix          # Main Power BI file
-├── car_price_dataset_medium.csv      # Source data
-├── README.md                          # This file
-│
-├── screenshots/
-│   ├── power_bi_overview.png
-│   ├── power_bi_brand_analysis.png
-│   ├── power_bi_fuel_analysis.png
-│   └── power_bi_value_analysis.png
-│
-└── exports/
-    ├── brand_analysis.csv
-    ├── fuel_type_analysis.csv
-    └── dashboard_report.pdf
-```
-
----
-
-## How to Use This Dashboard
-
-1. **Open Power BI Desktop**
-2. **File** → **Open** → Select `car_price_dashboard.pbix`
-3. Use slicers to filter data:
-   - Year range slider
-   - Brand multi-select
-   - Fuel type selector
-4. Click on any visualization to cross-filter others
-5. Navigate between pages using tabs at bottom
-
----
-
-## SQL Queries (Reference)
-
-**Average Price by Brand:**
-```sql
-SELECT Brand, AVG(Price_USD) AS Avg_Price
-FROM car_price_dataset_medium
-GROUP BY Brand
-ORDER BY Avg_Price DESC;
-```
-
-**Price Trends by Year:**
-```sql
-SELECT Model_Year, AVG(Price_USD) AS Avg_Price
-FROM car_price_dataset_medium
-GROUP BY Model_Year
-ORDER BY Model_Year;
-```
-
----
-
-## Future Enhancements
-
-1. **Real-Time Data**
-   - Connect to live database instead of CSV
-   - Automatic daily refreshes
-
-2. **Predictive Analytics**
-   - Add forecasting using Power BI's AI features
-   - Predict future price trends
-
-3. **Geographic Analysis**
-   - Add location data for regional price variations
-
-4. **Customer Segmentation**
-   - Incorporate buyer demographics
-   - Personalized recommendations
-
----
-
-## Author & Version
-
-**Created by:** [Your Name]  
-**Date:** December 2024  
-**Version:** 1.0  
-**Tools:** Power BI Desktop 2.125.1  
-**Contact:** [your.email@example.com]
-
----
-
-## License
-
-This project is for educational purposes as part of a Business Intelligence course.
