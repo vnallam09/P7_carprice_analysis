@@ -91,7 +91,7 @@ Value Score = DIVIDE(AVERAGE([Max_Power_bhp]), AVERAGE([Price_USD])) * 1000
 ### Key Findings
 
 #### **Finding 1: Premium Brand Hierarchy**
-
+![Overview Dashboard](screenshots/power_bi_overview.png)
 
 **Top 3 Most Expensive Brands:**
 1. Mercedes - $68,450 average
@@ -105,7 +105,7 @@ Value Score = DIVIDE(AVERAGE([Max_Power_bhp]), AVERAGE([Price_USD])) * 1000
 ---
 
 #### **Finding 2: Fuel Type Premium**
-
+![Fuel Analysis](screenshots/power_bi_fuel_analysis.png)
 
 **Price by Fuel Type:**
 - Hybrid: $62,340 (highest)
@@ -205,5 +205,33 @@ Value Score = DIVIDE(AVERAGE([Max_Power_bhp]), AVERAGE([Price_USD])) * 1000
 
 ---
 
+## Section 8: Ethical Considerations
 
+### Data Privacy & Bias:
+1. **Anonymization**
+   - Dataset contains no personal information (VIN, owner names)
+   - Car_ID is synthetic identifier
+
+2. **Sampling Bias**
+   - **Concern:** Dataset may over-represent certain brands
+   - **Impact:** Could mislead consumers about true market distribution
+   - **Mitigation:** Clearly label as "sample data," not market census
+
+3. **Price Fairness**
+   - **Concern:** Automated pricing algorithms could discriminate
+   - **Impact:** If dealers use this for pricing, could perpetuate regional/demographic biases
+   - **Mitigation:** Recommend human oversight, transparency in pricing factors
+
+### Responsible Use of Insights:
+1. **Decision Automation**
+   -  **Don't:** Use solely for automated loan approvals
+   - **Do:** Use as one input among many for human decision-makers
+
+2. **Consumer Impact**
+   - **Positive:** Helps buyers make informed decisions
+   - **Risk:** Could pressure buyers into "value" choices against preferences
+
+3. **Market Manipulation**
+   - **Risk:** If widely adopted, could create self-fulfilling price predictions
+   - **Mitigation:** Regular model updates, market validation
 
